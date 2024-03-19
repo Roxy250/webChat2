@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import bgVideo from "../assets/background-video4.mp4";
+import bgVideo from "../assets/BG.mp4";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -100,15 +99,15 @@ const SignUp = () => {
   const inputStyle = {
     display: "block",
     border: "none",
-    height: "50px",
+    height: "33px", // Adjusted height
     width: "100%",
     backgroundColor: "rgba(255,255,255,0.4)",
-    borderRadius: "5px",
-    padding: "0 10px",
-    marginTop: "2px",
-    fontSize: "18px",
-    fontWeight: "300",
-    marginBottom: "16px",
+    borderRadius: "3.35px", // Adjusted border radius
+    padding: "0 6.67px", // Adjusted padding
+    marginTop: "1.34px", // Adjusted margin
+    fontSize: "12px", // Adjusted font size
+    fontWeight: "200", // Adjusted font weight
+    marginBottom: "10.68px", // Adjusted margin bottom
   };
 
   const buttonStyle = {
@@ -116,13 +115,13 @@ const SignUp = () => {
     backgroundColor: "#1976d2",
     border: "none",
     color: "#080710",
-    padding: "15px 0",
-    fontSize: "18px",
-    fontWeight: "600",
-    borderRadius: "5px",
+    padding: "10px 0", // Adjusted padding
+    fontSize: "12px", // Adjusted font size
+    fontWeight: "400", // Adjusted font weight
+    borderRadius: "3.35px", // Adjusted border radius
     cursor: "pointer",
-    marginTop: "36px",
-    marginBottom: "10px",
+    marginTop: "20px", // Adjusted margin top
+    marginBottom: "5px", // Adjusted margin bottom
     textAlign: "center",
   };
 
@@ -163,15 +162,15 @@ const SignUp = () => {
       <form
         onSubmit={handleSubmit}
         style={{
-          width: "600px",
-          height:"auto",
+          width: "400px", // Adjusted width
+          height: "auto",
           backgroundColor: "rgba(255,255,255,0.3)",
-          borderRadius: "10px",
-          backdropFilter: "blur(100px)",
-          border: "2px solid rgba(255,255,255,0.1)",
-          boxShadow: "0 0 40px rgba(8,7,16,0.3)",
-          padding: "50px 100px",
-          fontSize: "20px",
+          borderRadius: "6.67px", // Adjusted border radius
+          backdropFilter: "blur(66.67px)", // Adjusted backdrop filter
+          border: "1.34px solid rgba(255,255,255,0.1)", // Adjusted border
+          boxShadow: "0 0 26.67px rgba(8,7,16,0.3)", // Adjusted box shadow
+          padding: "33.34px 66.67px", // Adjusted padding
+          fontSize: "13.33px", // Adjusted font size
         }}
       >
         <h1 style={{ textAlign: "center", marginBottom: "20px" }}>SignUp</h1>
@@ -191,10 +190,14 @@ const SignUp = () => {
             </div>
           ))}
         </div>
-        <button type="button" onClick={handleSendOtp} style={{...buttonStyle,  marginTop: "26px"}}>
+        <button
+          type="button"
+          onClick={handleSendOtp}
+          style={{ ...buttonStyle,  }}
+        >
           Send OTP
         </button>
-        
+
         <input
           placeholder={`Time remaining: ${Math.floor(timeRemaining / 60000)}:${(
             (timeRemaining % 60000) /
@@ -207,7 +210,7 @@ const SignUp = () => {
           onChange={handleOtpChange}
           style={{
             ...inputStyle,
-            marginTop: "32px",
+            marginTop: "20px",
             marginBottom: "6px",
             textAlign: "center",
           }}
@@ -218,13 +221,16 @@ const SignUp = () => {
         <button
           type="button"
           onClick={handleVerify}
-          style={buttonStyle }
+          style={buttonStyle}
           disabled={!disable}
         >
           Verify
         </button>
         <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <Link to={"/login"} style={{ textDecoration: "none" , color: "#1976d2" }}>
+          <Link
+            to={"/login"}
+            style={{ textDecoration: "none", color: "#1976d2" }}
+          >
             Already have an account? SignIn
           </Link>
         </div>
